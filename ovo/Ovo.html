@@ -32,11 +32,17 @@
             
             // Opções para o select
             const options = [
-                'Limpeza do piso e ralo', 
-                'Limpeza das paredes', 
-                'Limpeza dos equipamentos', 
+                '', 
                 'Filtro Palloni', 
-                'Peneira Granela', 
+                'Peneira Granela',
+                'STAMPS', 
+                'Robo',
+                'Carrinho robo',
+                'Vassoio',
+                'bomba de vacuo',
+                'Taparelli',
+                'Pallet vazio',
+                'Filtro Magnético',
                 'Outra atividade'
             ];
             options.forEach(opt => {
@@ -93,7 +99,7 @@
         /* Estilo para o campo Período */
         #periodo {
             border: 1px solid black; /* Borda menor e sólida */
-            padding: 2px; /* Reduz o espaço interno */
+            padding: 4px; /* Reduz o espaço interno */
             width: 150px; /* Define uma largura menor semelhante aos campos do cabeçalho */
             font-size: 14px; /* Ajusta o tamanho da fonte */
             box-sizing: border-box;
@@ -104,6 +110,13 @@
         .realizada-checkboxes input[type="checkbox"],
         .quantity-input {
             border: 1px solid black; /* Define a borda preta para os campos Atividade e Quantidade */
+        }
+
+        /* Estilo para o campo Atividade */
+        .atividade-select {
+            width: 200px; /* Largura aumentada */
+            padding: 4px; /* Padding aumentado */
+            font-size: 16px; /* Tamanho da fonte aumentado */
         }
 
         /* Estilo para os campos Código, Revisão e Data Emissão */
@@ -136,6 +149,21 @@
             width: 20px; /* Ajuste o tamanho do checkbox */
             height: 20px; /* Ajuste o tamanho do checkbox */
         }
+
+        /* Estilo para o título h1 */
+        header h1 {
+            text-align: center; /* Centraliza o texto */
+        }
+
+        header h1 {
+    text-align: center; /* Centraliza o texto */
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin: 20px 0; /* Define margem superior e inferior */
+    line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+}
+
+
     </style>
 </head>
 <body>
@@ -145,7 +173,7 @@
             <h1>CHECK LIST DIÁRIO DE LIMPEZA/HIGIENIZAÇÃO</h1>
             <div class="form-header">
                 <label for="codigo">Código:</label>
-                <input type="text" id="codigo" value="FQ 003 LV" readonly>
+                <input type="text" id="codigo" value="FO 001 LV" readonly>
 
                 <label for="revisao">Revisão:</label>
                 <input type="text" id="revisao" value="73829" readonly>
@@ -158,8 +186,8 @@
 
     <form id="checklistForm">
         <div class="form-section">
-            <label for="periodo">Período:</label>
-            <input type="date" id="periodo" name="periodo" required>
+            <label for="periodo">Data:</label>
+            <input type="text" id="periodo" name="periodo" placeholder="_____/______/______" maxlength="10" required>
         </div>
 
         <div class="form-section">
@@ -185,11 +213,15 @@
                 <tr>
                     <td>
                         <select name="atividade_select[]" class="atividade-select">
-                            <option value="Limpeza do piso e ralo">Limpeza do piso e ralo</option>
-                            <option value="Limpeza das paredes">Limpeza das paredes</option>
-                            <option value="Limpeza dos equipamentos">Limpeza dos equipamentos</option>
+                            <option value="Limpeza do piso e ralo"></option>
                             <option value="Filtro Palloni">Filtro Palloni</option>
                             <option value="Peneira Granela">Peneira Granela</option>
+                            <option value="Robo">Robo</option>
+                            <option value="Carrinho robo">Carrinho robo</option>
+                            <option value="bomba de vacuo">bomba de vacuo</option>
+                            <option value="Taparelli">Taparelli</option>
+                            <option value="Outra atividade">Pallet vazio</option>
+                            <option value="Outra atividade">Filtro Magnético</option>
                             <option value="Outra atividade">Outra atividade</option>
                         </select>
                     </td>
@@ -220,12 +252,12 @@
         <button type="button" onclick="adicionarAtividade()">Adicionar Atividade</button>
 
         <div class="form-section">
-            <label for="observacoes">Observações:</label>
+            <label for="observacoes">Observação:</label>
             <textarea id="observacoes" name="observacoes" rows="4" placeholder=""></textarea>
         </div>
 
         <div class="form-section">
-            <label>Responsável pelas verificações:</label>
+            <label>Responsável pelo Lavatório:</label>
             <div class="responsaveis">
                 <div>
                     <label for="responsavel_turno_a">Turno A:</label>
