@@ -44,7 +44,6 @@
                 'Pallet vazio',
                 'Filtro Magnético',
                 'Outra atividade'
-
             ];
             options.forEach(opt => {
                 const option = document.createElement('option');
@@ -118,8 +117,8 @@
             width: 200px; /* Largura aumentada */
             padding: 4px; /* Padding aumentado */
             font-size: 16px; /* Tamanho da fonte aumentado */
-        
-        
+        }
+
         /* Estilo para os campos Código, Revisão e Data Emissão */
         .form-header input[type="text"] {
             border: 1px solid black; /* Define a borda preta para os campos Código, Revisão e Data Emissão */
@@ -150,6 +149,21 @@
             width: 20px; /* Ajuste o tamanho do checkbox */
             height: 20px; /* Ajuste o tamanho do checkbox */
         }
+
+        /* Estilo para o título h1 */
+        header h1 {
+            text-align: center; /* Centraliza o texto */
+        }
+
+        header h1 {
+    text-align: center; /* Centraliza o texto */
+    font-size: 24px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin: 20px 0; /* Define margem superior e inferior */
+    line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+}
+
+
     </style>
 </head>
 <body>
@@ -173,7 +187,7 @@
     <form id="checklistForm">
         <div class="form-section">
             <label for="periodo">Data:</label>
-            <input type="date" id="periodo" name="periodo" required>
+            <input type="text" id="periodo" name="periodo" placeholder="_____/______/______" maxlength="10" required>
         </div>
 
         <div class="form-section">
