@@ -32,13 +32,19 @@
             
             // Opções para o select
             const options = [
-                'Limpeza do piso e ralo', 
-                'Limpeza das paredes', 
-                'Limpeza dos equipamentos', 
+                '', 
                 'Filtro Palloni', 
                 'Peneira Granela',
                 'STAMPS', 
+                'Robo',
+                'Carrinho robo',
+                'Vassoio',
+                'bomba de vacuo',
+                'Taparelli',
+                'Pallet vazio',
+                'Filtro Magnético',
                 'Outra atividade'
+
             ];
             options.forEach(opt => {
                 const option = document.createElement('option');
@@ -186,12 +192,15 @@
                 <tr>
                     <td>
                         <select name="atividade_select[]" class="atividade-select">
-                            <option value="Limpeza do piso e ralo">Limpeza do piso e ralo</option>
-                            <option value="Limpeza das paredes">Limpeza das paredes</option>
-                            <option value="Limpeza dos equipamentos">Limpeza dos equipamentos</option>
+                            <option value="Limpeza do piso e ralo"></option>
                             <option value="Filtro Palloni">Filtro Palloni</option>
                             <option value="Peneira Granela">Peneira Granela</option>
-                            <option value="Peneira Granela">STAMPS</option>
+                            <option value="Robo">Robo</option>
+                            <option value="Carrinho robo">Carrinho robo</option>
+                            <option value="bomba de vacuo">bomba de vacuo</option>
+                            <option value="Taparelli">Taparelli</option>
+                            <option value="Outra atividade">Pallet vazio</option>
+                            <option value="Outra atividade">Filtro Magnético</option>
                             <option value="Outra atividade">Outra atividade</option>
                         </select>
                     </td>
